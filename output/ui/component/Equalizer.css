@@ -1,0 +1,132 @@
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.equaliser-container {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 30px;
+    zoom: 1;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.equaliser-container:before,
+.equaliser-container:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.equaliser-container:after {
+  clear: both;
+}
+.colour-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: #484848;
+
+  animation:none;
+  transform:translateY(95%);
+  transition:transform 2s;
+ 
+}
+.equaliser-column {
+  width: 6px;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.play .equaliser-column:nth-child(1) .colour-bar {
+  animation: color-bar 2s 1s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(2) .colour-bar {
+  animation: color-bar 2s 0.5s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(3) .colour-bar {
+  animation: color-bar 2s 1.5s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(4) .colour-bar {
+  animation: color-bar 2s 0.25s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(5) .colour-bar {
+  animation: color-bar 2s 2s ease-out alternate infinite;
+}
+
+.play .equaliser-column:nth-child(6) .colour-bar {
+  animation: color-bar 2s 1.3s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(7) .colour-bar {
+  animation: color-bar 2s 2.5s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(8) .colour-bar {
+  animation: color-bar 2s 0s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(9) .colour-bar {
+  animation: color-bar 2s 0.75s ease-out alternate infinite;
+}
+.play .equaliser-column:nth-child(10) .colour-bar {
+  animation: color-bar 2s 3s ease-out alternate infinite;
+}
+@keyframes color-bar {
+  0% {
+    transform:translateY(10%);
+  }
+  10% {
+    transform:translateY(54%);
+  }
+  20% {
+    transform:translateY(34%);
+  }
+  30% {
+    transform:translateY(76%);
+  }
+  40% {
+    transform:translateY(100%);
+  }
+  50% {
+    transform:translateY(34%);
+  }
+  60% {
+    transform:translateY(76%);
+  }
+  70% {
+    transform:translateY(34%);
+  }
+  80% {
+    transform:translateY(76%);
+  }
+  90% {
+    transform:translateY(22%);
+  }
+  100% {
+    transform:translateY(11%);
+  }
+}
+/*input[type="checkbox"]#track-control {
+	~ equaliser-container .colour-bar {
+      animation:paused;
+    }
+  &:checked {
+    ~ equaliser-container .colour-bar {
+      animation:running;
+    }
+  }
+}*/
+/* background: -webkit-linear-gradient(top, #f70c0c 0%,#f70c0c 18px,#a2d822 18px,#a2d822 100%); */

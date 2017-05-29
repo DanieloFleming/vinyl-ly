@@ -1,0 +1,39 @@
+.volume-slider {
+    width: 23px;
+    right: 17px;
+    bottom: 37px;
+    position: absolute;
+    height: 90px;
+    overflow: hidden;
+    background: #fbfbfb;
+    box-shadow: 0px 0px 2px #bdbdbd;
+    display: none;
+}
+
+.volume-slider.active {
+    display: block;
+    opacity: 1;
+
+}
+.fade-out.volume-slider.volume-slider.active {
+    opacity: 0;
+    transition: opacity .2s 2s ease-in;
+}
+.fade-out.volume-slider.volume-slider.active:hover,
+.fade-out.volume-slider.volume-slider.active:active {
+    transition: opacity .2s ease;
+    opacity: 1;
+}
+
+.volume-slider input[type="range"] {
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 4px;
+    width: 88px;
+    left: 0;
+    transform-origin: 12px center;
+}
+
+.volume-slider input[type="range"]:active {
+    cursor: ns-resize;
+}

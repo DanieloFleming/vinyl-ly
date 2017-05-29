@@ -1,0 +1,66 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color:#484848;
+    overflow: hidden;
+    position:fixed;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    font-weight: 100;
+}
+
+*, *::before, *:after {
+    box-sizing: border-box;
+    outline: none;
+
+}
+*:active, *:focus {
+    outline: none;
+}
+*::-moz-focus-outer,
+*::-moz-focus-inner {
+    border: 0;
+    outline: 0; 
+    outline-style:none;
+}
+#container, #application {
+    width: 250px;
+    height:450px;
+    background: white;
+    box-shadow: 3px 2px 5px 0px rgba(168,168,168,.4);
+    border-radius: 3px;
+
+    position: absolute;
+    overflow:hidden;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+#application {
+    padding:10px 10px;
+}
+.activity {
+    width: 100%;
+    height:calc(100% - 40px);
+    position:relative;
+    overflow: hidden;
+    opacity: 0;
+}
+.activity.show {
+    opacity: 1;
+    transition: opacity .7s ease;
+}
+.activity header {
+    text-align: center;
+    height: 50px;
+    padding-top: 8px;
+    border-bottom:1px solid #d8d8d8;
+}

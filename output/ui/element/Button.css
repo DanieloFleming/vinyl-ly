@@ -1,0 +1,57 @@
+.button {
+    border:none;
+    background:none;
+    cursor: pointer;
+    width:30px;
+    height:30px;
+    background-color: transparent;
+    border-radius: 3px;
+    margin:10px;
+
+    transition: background-color, .7s ease;
+}
+.button:hover {
+    background-color: #e4e4e4;
+    transition: background-color, .3s ease;
+}
+
+.button[data-type="list"], .button[data-type="player"] {
+    position: absolute;
+    left: 4px;
+    top: 0px;
+}
+.button[data-type="volume"] {
+    position: absolute;
+    right:4px;
+    top:0;
+}
+.button[data-type="player"]:before,
+.button[data-type="volume"]:before {
+    font-size: 13px;
+}
+.button[data-type="volume"]:before {
+    /*margin-left:6px;*/
+}
+/*
+.button.previous {
+    background-image: url('../../img/mediacontrols/prev.png');
+}
+.button.play{
+    background-image: url('../../img/mediacontrols/play.png');
+}
+.button.pause {
+    background-image: url('../../img/mediacontrols/pause.png');
+}
+.button.next{
+    background-image: url('../../img/mediacontrols/next.png');
+}
+
+.button.player{
+    background-image: url('../../img/mediacontrols/record.png');
+}
+.button.list{
+    background-image: url('../../img/mediacontrols/list.png');
+        background-size:60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}*/

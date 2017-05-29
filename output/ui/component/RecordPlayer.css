@@ -1,0 +1,78 @@
+.record-table {
+    position: absolute;
+    width: 95%;
+    height: 205px;
+    top: 60px;
+    border-radius: 4px;
+    background: #f7f7f7;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.record-arm {
+    position: absolute;
+    background:url('../../img/recordplayer/arm.png') center center no-repeat;
+    background-size: 100%;
+    width: 110px;
+    height: 110px;
+    right: 1%;
+    top: 20px;
+    transform-origin: 79.8% 16.4%;
+    transform: rotate(-45deg);
+    transition:transform .6s ease;
+    transition-delay: .0s;
+}
+
+.record-vinyl {
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    margin-left: -100px;
+    background:url('../../img/recordplayer/vinyl.png') center center no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    overflow: hidden;
+
+    animation: rotation 2s linear infinite;
+    animation-play-state: paused;
+}
+.record-vinyl:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #616161;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -5px 0 0 -5px;
+    border: 2px solid white;
+}
+.record-image {
+    width:80px;
+    height:80px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    border-radius:50%;
+    border:2px solid white;
+    transform:translate(-50%, -50%);
+    outline:none;
+}
+
+.is-playing .record-vinyl {
+    animation-play-state: running;
+}
+
+.is-playing .record-arm {
+    transform: rotate(-31deg);
+}
+
+@keyframes rotation {
+    0% {
+        transform:rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}

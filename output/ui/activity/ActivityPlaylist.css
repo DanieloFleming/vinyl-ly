@@ -1,0 +1,14 @@
+.playlist {
+    list-style: none;
+    width: calc(100% + 20px);
+    height:calc(100% - 50px);
+    padding-bottom:10px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    transform:translateZ(0);
+}
+
+.header-title {
+    font-size: 20px;
+    text-transform: uppercase;
+}

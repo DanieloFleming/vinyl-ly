@@ -1,0 +1,214 @@
+@import url('ui/base.css');
+@import url('fonts/flaticon.css');
+
+/*activities*/
+@import url('ui/activity/ActivityPlaylist.css');
+
+/*components*/
+@import url('ui/component/MediaControls.css');
+@import url('ui/component/RecordPlayer.css');
+@import url('ui/component/SeekBar.css');
+@import url('ui/component/Equalizer.css');
+@import url('ui/component/VolumeSlider.css');
+
+/*elements*/
+@import url('ui/element/Button.css');
+@import url('ui/element/PlaylistItem.css');
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f0;
+    font-size: 12px;
+
+}
+* {
+    margin: 0;
+    padding:0;
+}
+*, *::before, *:after {
+    box-sizing: border-box;
+}
+#container, #application {
+    width: 260px;
+    height:500px;
+    background: white;
+    box-shadow: 3px 2px 5px 0px rgba(168,168,168,.4);
+    border-radius: 3px;
+
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+
+}
+.view {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.view-recordplayer {
+    padding: 0px 30px;
+}
+.list {
+    list-style: none;
+    width: 100%;
+    padding:5px;
+    height:100%;
+    overflow: scroll;
+}
+.list-item {
+    border-bottom:1px solid #eee;
+    display:block;
+    position: relative;
+    height:65px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.list-item:before {
+    content:"";
+    width:100%;
+    height:100%;
+    background: #ff0000;
+    position:absolute;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+.list-item:hover:before {
+    opacity: .5;
+    transition: opacity .4s ease;
+}
+.list-item img {
+    position:absolute;
+    width:50px;
+    height: 50px;
+    border-radius: 50px;
+    top:50%;
+    margin-top:-25px;
+    left:5px;
+
+}
+.list-item--info {
+    position:absolute;
+    left:60px;
+    top:50%;
+    transform:translateY(-50%);
+
+}
+.list-item--info span {
+    display:block;
+    margin:2.5px 5px;
+}
+
+
+
+.song-info {
+    width: 100%;
+    margin-top:30px;
+    text-align: center;
+}
+
+.song-info span {
+    margin:5px;
+    display: block;
+}
+.song-info .artist {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.record-table {
+    top:85px;
+    left:11%;
+    position: absolute;
+}
+.record-arm {
+    position: absolute;
+    background:url('../media/img/arm-l.png') center center no-repeat;
+    background-size: 100%;
+    width: 110px;
+    height: 110px;
+    left: 100px;
+    top: 5px;
+    transform-origin: 79.8% 16.4%;
+    transform: rotate(-40deg);
+    transition:transform .6s ease;
+    transition-delay: .2s;
+}
+
+.record-vinyl {
+    width:200px;
+    height:200px;
+    background:url('../media/img/vinyl.png') center center no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    overflow: hidden;
+
+    animation: rotation 2s linear infinite;
+    animation-play-state: paused;
+}
+
+.record-image {
+    width:80px;
+    height:80px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    border-radius:50%;
+    border:2px solid white;
+    transform:translate(-50%, -50%);
+}
+
+.track-seeker {
+    position: relative;
+    top: 253px;
+    width: 100%;
+}
+.track-seeker .duration,
+.track-seeker .elapsed  {
+    position:absolute;
+}
+.track-seeker .duration {
+    text-align: right;
+    right:0;
+}
+.track-seeker .elapsed {
+    text-align: left;
+    left:0;
+}
+.seekbar {
+    width: 100%;
+    position: absolute;
+    top:25px;
+}
+.control-button-group {
+    top: 325px;
+    position: relative;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.control-button-group button {
+    width:50px;
+    height:50px;
+    border:1px solid black;
+}
+.is-playing .record-vinyl {
+    animation-play-state: running;
+}
+
+.is-playing .record-arm {
+    transform: rotate(-35deg);
+}
+
+@keyframes rotation {
+    0% {
+        transform:rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
