@@ -26,8 +26,15 @@ class ActivityPlaylist extends React.Component
     }
 
     componentDidMount() {
-        AudioPlayer.listenTo(AudioPlayer.Event.TrackChanged, this.handleTrackChange);
-        AudioPlayer.listenTo(AudioPlayer.Event.PlayChange, this.handlePlayChange);
+        AudioPlayer.listenTo(
+            AudioPlayer.Event.TrackChanged, 
+            this.handleTrackChange
+        );
+
+        AudioPlayer.listenTo(
+            AudioPlayer.Event.PlayChange, 
+            this.handlePlayChange
+        );
 
         this.timer = setTimeout(() => this.show(), 1);
 

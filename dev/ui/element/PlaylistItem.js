@@ -7,10 +7,11 @@ function PlaylistItem(props) {
     const artistName = props.data.artist;
     const songTitle = props.data.songTitle;
     const isSelected = props.isSelected ? ' selected' : '';
-    const isPlaying = props.isSelected && props.isPlaying ? ' playing' : ''
+    const isPlaying = props.isSelected && props.isPlaying ? ' playing' : '';
+    let   className = "playlist-item " + isSelected + isPlaying;
 
     return( 
-        <li data-index={props.index} onClick={onClick} className={"playlist-item " + isSelected + isPlaying} data-id={props.id}
+        <li data-index={props.index} onClick={onClick} className={className} data-id={props.id}
         ref={ (li) => props.isSelected ? props.setTarget(li) : null}>
             <div className="cover-art">
                 <figure className="cover-art-vinyl"></figure>

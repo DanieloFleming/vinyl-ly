@@ -7,6 +7,7 @@ class VolumeSlider extends React.Component
 
     constructor(props){
         super(props);
+
         this.state = {isActive:false, fade:''};
 
         this.handleMouseEvent = this.handleMouseEvent.bind(this);
@@ -14,7 +15,9 @@ class VolumeSlider extends React.Component
 
     componentWillReceiveProps(nextProps) {
         if(nextProps.isActive !== this.props.isActive) {
+
             this.setState({isActive:nextProps.isActive});
+
             if(nextProps.isActive) {
                 this.setTimer();
             }
@@ -45,13 +48,17 @@ class VolumeSlider extends React.Component
     setTimer(seconds = 2300) {
         this.timer = setTimeout(() => {
             this.setState({isActive:false, fade:''});
+            
             this.removeTimer();
+            
             this.props.setInactive();
         }, seconds);
     }
 
     removeTimer() {
-        if(this.timer) clearTimeout(this.timer);
+        if(this.timer) {
+            clearTimeout(this.timer);
+        }
     }
 }
 

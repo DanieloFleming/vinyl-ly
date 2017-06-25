@@ -28,13 +28,16 @@ class ActivityRecordPlayer extends React.Component
         AudioPlayer.listenTo(AudioPlayer.Event.PlayChange, this.handlePlayChange);
         AudioPlayer.listenTo(AudioPlayer.Event.TimeUpdate, this.handleTimeChange);
         AudioPlayer.listenTo(AudioPlayer.Event.TrackChanged, this.handleTrackChange);
+
         this.timer = setTimeout(() => this.show(), 1);
+
         AudioPlayer.setTrack(this.state.songData.id);
 
     }
 
     show() {
         this.setState({show : 'show'});
+        
         clearTimeout(this.timer);
     }
 
